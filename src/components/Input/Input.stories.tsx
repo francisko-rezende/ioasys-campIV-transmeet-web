@@ -13,3 +13,19 @@ export default {
 // const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 
 // const Template: ComponentStory<typeof Input> = () => <Input />
+
+export const Password = () => {
+  const password = useFormValidation('password')
+
+  return (
+    <Input
+      label="Senha"
+      inputType="password"
+      name="password"
+      error={password.error}
+      onBlur={password.onBlur}
+      onChange={password.onChange}
+      value={password.value}
+    />
+  )
+}
