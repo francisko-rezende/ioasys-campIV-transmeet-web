@@ -63,3 +63,20 @@ export const Telefone = () => {
     />
   )
 }
+
+export const CPF = () => {
+  const cpf = useFormValidation('cpf')
+
+  return (
+    <Input
+      label="CPF"
+      inputType="text"
+      name="cpf"
+      error={cpf.error}
+      onBlur={cpf.onBlur}
+      onChange={cpf.onChange}
+      value={cpf.value}
+      placeholder="999.999.999-99"
+    />
+  )
+}
