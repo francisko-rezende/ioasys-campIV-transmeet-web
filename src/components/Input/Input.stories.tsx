@@ -46,3 +46,20 @@ export const Email = () => {
     />
   )
 }
+
+export const Telefone = () => {
+  const phone = useFormValidation('phone')
+
+  return (
+    <Input
+      label="Telefone"
+      inputType="tel"
+      name="phone"
+      error={phone.error}
+      onBlur={phone.onBlur}
+      onChange={phone.onChange}
+      value={phone.value}
+      placeholder="+99 (99) 9999-9999"
+    />
+  )
+}
