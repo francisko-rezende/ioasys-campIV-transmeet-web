@@ -29,3 +29,20 @@ export const Password = () => {
     />
   )
 }
+
+export const Email = () => {
+  const email = useFormValidation('email')
+
+  return (
+    <Input
+      label="Email"
+      inputType="email"
+      name="email"
+      error={email.error}
+      onBlur={email.onBlur}
+      onChange={email.onChange}
+      value={email.value}
+      placeholder="biruleibe@gmail.com"
+    />
+  )
+}
