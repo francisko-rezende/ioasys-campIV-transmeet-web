@@ -59,7 +59,7 @@ export const Telefone = () => {
       onBlur={phone.onBlur}
       onChange={phone.onChange}
       value={phone.value}
-      placeholder="+99 (99) 9999-9999"
+      placeholder="(99) 9999-9999"
     />
   )
 }
