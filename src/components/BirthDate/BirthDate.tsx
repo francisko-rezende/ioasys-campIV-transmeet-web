@@ -3,17 +3,17 @@ import React from 'react'
 import * as S from './BirthDate.style'
 
 const BirthDate = () => {
-  const subtractYearsFromPresentDate = (yearsToSubtract: number) => {
+  const subtractYearsFromPresentDate = (yearsToSubtract: number): string => {
     const today = new Date()
     today.setFullYear(today.getFullYear() - yearsToSubtract)
 
-    const getTwoDigitMonth = (month: number) =>
-      month < 10 ? `0${month}` : month
+    const getTwoDigitNumber = (month: number): string =>
+      month < 10 ? `0${month}` : String(month)
 
     const resultingDate = new Date(today)
     const resultingDateYear = resultingDate.getFullYear()
-    const resultingDateMonth = getTwoDigitMonth(resultingDate.getMonth() + 1)
-    const resultingDateDay = resultingDate.getDate()
+    const resultingDateMonth = getTwoDigitNumber(resultingDate.getMonth() + 1)
+    const resultingDateDay = getTwoDigitNumber(resultingDate.getDate())
 
     return [resultingDateYear, resultingDateMonth, resultingDateDay].join('-')
   }
