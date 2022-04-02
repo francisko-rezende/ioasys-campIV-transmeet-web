@@ -7,8 +7,8 @@ const BirthDate = () => {
     const today = new Date()
     today.setFullYear(today.getFullYear() - yearsToSubtract)
 
-    const getTwoDigitNumber = (month: number): string =>
-      month < 10 ? `0${month}` : String(month)
+    const getTwoDigitNumber = (number: number): string =>
+      number < 10 ? `0${number}` : String(number)
 
     const resultingDate = new Date(today)
     const resultingDateYear = resultingDate.getFullYear()
