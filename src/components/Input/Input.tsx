@@ -25,8 +25,8 @@ const Input = ({
 }: Props) => {
   return (
     <S.Wrapper>
-      <label htmlFor={name}>{label}</label>
-      <input
+      <S.Label htmlFor={name}>{label}</S.Label>
+      <S.Input
         type={inputType}
         name={name}
         value={value}
@@ -34,7 +34,7 @@ const Input = ({
         onBlur={onBlur}
         placeholder={placeholder}
       />
-      {error && <p>{error}</p>}
+      {error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   )
 }

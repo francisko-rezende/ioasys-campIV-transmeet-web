@@ -10,7 +10,19 @@ export default {
   component: Input,
 } as ComponentMeta<typeof Input>
 
-// const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
+export const Template: ComponentStory<typeof Input> = (args) => (
+  <Input {...args} />
+)
+
+Template.args = {
+  label: 'Label',
+  placeholder: 'Input value goes here 1234567890',
+  error: 'This is an error',
+}
+
+// export const Email: ComponentStory<typeof Input> = Template.bind({})
+
+// Email.args = {}
 
 // const Template: ComponentStory<typeof Input> = () => <Input />
 
