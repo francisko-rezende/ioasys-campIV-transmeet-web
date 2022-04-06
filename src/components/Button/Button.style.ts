@@ -8,11 +8,13 @@ type StyledButtonProps = {
 
 const buttonVariants = {
   short: () => css`
-    padding: 6px 49px;
+    padding: 6px;
+    width: 143px;
   `,
 
   long: () => css`
-    padding: 6px 87.5px;
+    padding: 6px;
+    width: 270px;
   `,
 
   primary: (theme: DefaultTheme) => css`
