@@ -3,19 +3,19 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: inherit;
+  height: 56px;
+  position: relative;
   justify-content: center;
-  align-items: center;
-  /* margin-bottom: 100px; */
-  /* width: 100%; */
-  /* background-color: blue; */
 `
 
 export const Label = styled.label`
   z-index: 2;
-  position: relative;
-  left: 13px;
-  top: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* left: 11px; */
+  /* margin: 0 auto; */
+  top: -4px;
   padding: 0 5px;
   width: fit-content;
 
@@ -32,7 +32,8 @@ export const Input = styled.input`
   border-color: ${({ theme }) => theme.colors.typographyColors.gray};
   border-style: solid;
   border-radius: 4px;
-  padding: 14px 170px;
+  text-align: center;
+  padding: 14px 0;
   height: 56px;
   width: 100%;
   /* width: 470px; */

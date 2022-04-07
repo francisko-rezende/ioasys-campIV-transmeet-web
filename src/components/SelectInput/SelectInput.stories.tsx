@@ -33,4 +33,5 @@ export const Estado = StoryTemplate.bind({})
 Estado.args = {
   name: 'Estado',
   options: states,
+  selectWidth: '170px',
 }

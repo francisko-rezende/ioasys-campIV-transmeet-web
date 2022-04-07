@@ -26,19 +26,21 @@ const Input = ({
   inputWidth = '470px',
 }: InputProps) => {
   return (
-    <S.Wrapper>
-      <S.Label htmlFor={name}>{label}</S.Label>
-      <S.Input
-        type={inputType}
-        name={name}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        placeholder={placeholder}
-        inputWidth={inputWidth}
-      />
+    <>
+      <S.Wrapper>
+        <S.Label htmlFor={name}>{label}</S.Label>
+        <S.Input
+          type={inputType}
+          name={name}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          placeholder={placeholder}
+          inputWidth={inputWidth}
+        />
+      </S.Wrapper>
       {error && <S.Error>{error}</S.Error>}
-    </S.Wrapper>
+    </>
   )
 }
 

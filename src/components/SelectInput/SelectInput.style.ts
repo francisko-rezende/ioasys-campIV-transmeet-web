@@ -1,9 +1,14 @@
 import styled, { css } from 'styled-components'
 
+import { SelectProps } from './SelectInput'
+
+type StyledSelectProps = Pick<SelectProps, 'selectWidth'>
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: inherit;
+  height: 56px;
+  position: relative;
   /* margin-bottom: 100px; */
   /* width: 100%; */
   /* background-color: blue; */
@@ -11,9 +16,11 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label`
   z-index: 2;
-  position: relative;
-  left: 27px;
-  top: 10px;
+  position: absolute;
+  /* left: 13px; */
+  /* top: 10px; */
+  left: 11px;
+  top: -4px;
   padding: 0 5px;
   width: fit-content;
 
@@ -25,7 +32,7 @@ export const Label = styled.label`
   `}
 `
 
-export const Select = styled.select`
+export const Select = styled.select<StyledSelectProps>`
   background-color: transparent;
   border-width: 1px;
   border-color: ${({ theme }) => theme.colors.typographyColors.gray};
@@ -36,11 +43,11 @@ export const Select = styled.select`
   width: 100%;
   /* width: 470px; */
   /* margin-left: 15px; */
-  max-width: 470px;
   line-height: 1.4;
 
-  ${({ theme }) => css`
+  ${({ theme, selectWidth }) => css`
     font-size: ${theme.font.sizes['4']};
     color: ${theme.colors.typographyColors.gray};
+    max-width: ${selectWidth};
   `}
 `

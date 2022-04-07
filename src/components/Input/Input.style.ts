@@ -7,17 +7,15 @@ type StyledInputProps = Pick<InputProps, 'inputWidth'>
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: inherit;
-  /* margin-bottom: 100px; */
-  /* width: 100%; */
-  /* background-color: blue; */
+  height: 56px;
+  position: relative;
 `
 
 export const Label = styled.label`
   z-index: 2;
-  position: relative;
-  left: 13px;
-  top: 10px;
+  position: absolute;
+  left: 11px;
+  top: -4px;
   padding: 0 5px;
   width: fit-content;
 
@@ -51,8 +49,7 @@ export const Input = styled.input<StyledInputProps>`
 
 export const Error = styled.p`
   color: ${({ theme }) => theme.colors.statusColor.error};
+  font-size: ${({ theme }) => theme.font.sizes['3']};
   position: relative;
-  top: 0.5rem;
-  left: 29px;
   max-width: 100%;
 `

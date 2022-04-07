@@ -5,13 +5,14 @@ import * as S from './SelectInput.style'
 export type SelectProps = {
   name?: string
   options?: string[]
+  selectWidth?: string
 }
 
-const SelectInput = ({ name, options }: SelectProps) => {
+const SelectInput = ({ name, options, selectWidth }: SelectProps) => {
   return (
     <S.Wrapper>
       <S.Label htmlFor={name}>{name}</S.Label>
-      <S.Select name={name} id={name}>
+      <S.Select name={name} id={name} selectWidth={selectWidth}>
         <option disabled selected>
           Selecionar
         </option>
