@@ -24,8 +24,8 @@ const BirthDate = () => {
 
   return (
     <S.Wrapper>
-      <label htmlFor="birthDate">Data de nascimento:</label>
-      <input
+      <S.Label htmlFor="birthDate">Data de Nascimento</S.Label>
+      <S.Input
         type="date"
         name="birthDate"
         min={todayMinus100years}
