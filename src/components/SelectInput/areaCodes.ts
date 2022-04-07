@@ -1,4 +1,4 @@
-export const ddds: string[] = [
+export const areaCodes: string[] = [
   '11',
   '12',
   '13',

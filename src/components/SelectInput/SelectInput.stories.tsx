@@ -3,7 +3,7 @@ import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import SelectInput from '.'
-import { ddds } from './ddds'
+import { areaCodes } from './areaCodes'
 import { states } from './states'
 
 export default {
@@ -25,7 +25,7 @@ export const DDD = StoryTemplate.bind({})
 
 DDD.args = {
   name: 'DDD',
-  options: ddds,
+  options: areaCodes,
 }
 
 export const Estado = StoryTemplate.bind({})
