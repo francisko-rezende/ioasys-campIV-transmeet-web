@@ -3,14 +3,30 @@ import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import SelectInput from '.'
+import { ddds } from './ddds'
+import { stateAcronyms } from './stateAcronyms'
 
 export default {
   title: 'SelectInput',
   component: SelectInput,
 } as ComponentMeta<typeof SelectInput>
 
-const StoryTemplate: ComponentStory<typeof SelectInput> = (...args) => (
-  <SelectInput {...args} name="Template" options={['first', 'second']} />
+const StoryTemplate: ComponentStory<typeof SelectInput> = (args) => (
+  <SelectInput {...args} />
 )
 
 export const Template = StoryTemplate.bind({})
+
+export const DDD = StoryTemplate.bind({})
+
+DDD.args = {
+  name: 'DDD',
+  options: ddds,
+}
+
+export const Estado = StoryTemplate.bind({})
+
+Estado.args = {
+  name: 'Estado',
+  options: stateAcronyms,
+}

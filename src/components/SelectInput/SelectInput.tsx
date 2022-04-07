@@ -3,8 +3,8 @@ import React from 'react'
 import * as S from './SelectInput.style'
 
 export type SelectProps = {
-  name: string
-  options: string[]
+  name?: string
+  options?: string[]
 }
 
 const SelectInput = ({ name, options }: SelectProps) => {
