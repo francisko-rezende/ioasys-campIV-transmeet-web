@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components'
 
+import { InputProps } from './Input'
+
+type StyledInputProps = Pick<InputProps, 'inputWidth'>
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,7 +29,7 @@ export const Label = styled.label`
   `}
 `
 
-export const Input = styled.input`
+export const Input = styled.input<StyledInputProps>`
   border-width: 1px;
   border-color: ${({ theme }) => theme.colors.typographyColors.gray};
   border-style: solid;
@@ -35,12 +39,13 @@ export const Input = styled.input`
   width: 100%;
   /* width: 470px; */
   /* margin-left: 15px; */
-  max-width: 470px;
+  /* max-width: 470px; */
   line-height: 1.4;
 
-  ${({ theme }) => css`
+  ${({ theme, inputWidth }) => css`
     font-size: ${theme.font.sizes['4']};
     color: ${theme.colors.typographyColors.gray};
+    max-width: ${inputWidth};
   `}
 `
 

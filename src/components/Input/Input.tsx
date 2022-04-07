@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as S from './Input.style'
 
-interface Props {
+export type InputProps = {
   label: string
   inputType: string
   name: string
@@ -11,7 +11,7 @@ interface Props {
   onBlur: () => boolean
   error: string | null
   placeholder?: string
-  width?: 'full'
+  inputWidth?: string
 }
 
 const Input = ({
@@ -23,8 +23,8 @@ const Input = ({
   error,
   onBlur,
   placeholder,
-  width,
-}: Props) => {
+  inputWidth = '470px',
+}: InputProps) => {
   return (
     <S.Wrapper>
       <S.Label htmlFor={name}>{label}</S.Label>
@@ -35,7 +35,7 @@ const Input = ({
         onChange={onChange}
         onBlur={onBlur}
         placeholder={placeholder}
-        width={width}
+        inputWidth={inputWidth}
       />
       {error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
