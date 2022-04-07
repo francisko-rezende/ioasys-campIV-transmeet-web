@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import SelectInput from '.'
 import { ddds } from './ddds'
-import { stateAcronyms } from './stateAcronyms'
+import { states } from './states'
 
 export default {
   title: 'SelectInput',
@@ -32,5 +32,5 @@ export const Estado = StoryTemplate.bind({})
 
 Estado.args = {
   name: 'Estado',
-  options: stateAcronyms,
+  options: states,
 }
