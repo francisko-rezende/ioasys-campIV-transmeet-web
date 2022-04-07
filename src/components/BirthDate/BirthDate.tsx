@@ -4,6 +4,7 @@ import * as S from './BirthDate.style'
 
 const BirthDate = () => {
   const subtractYearsFromPresentDate = (yearsToSubtract: number): string => {
+    // todo refactor this so it uses the lib Roberto suggested
     const today = new Date()
     today.setFullYear(today.getFullYear() - yearsToSubtract)
 
