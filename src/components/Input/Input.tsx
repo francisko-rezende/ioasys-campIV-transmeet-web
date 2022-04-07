@@ -11,6 +11,7 @@ interface Props {
   onBlur: () => boolean
   error: string | null
   placeholder?: string
+  width?: 'full'
 }
 
 const Input = ({
@@ -22,6 +23,7 @@ const Input = ({
   error,
   onBlur,
   placeholder,
+  width,
 }: Props) => {
   return (
     <S.Wrapper>
@@ -33,6 +35,7 @@ const Input = ({
         onChange={onChange}
         onBlur={onBlur}
         placeholder={placeholder}
+        width={width}
       />
       {error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
