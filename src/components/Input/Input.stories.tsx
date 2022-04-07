@@ -92,3 +92,30 @@ export const CPF = () => {
     />
   )
 }
+
+export const Nome = Template.bind({})
+
+Nome.args = {
+  label: 'Nome Social Completo',
+  inputType: 'text',
+  name: 'name',
+  placeholder: 'Paloma Bernardi',
+}
+
+export const Cidade = Template.bind({})
+
+Cidade.args = {
+  label: 'Cidade',
+  inputType: 'text',
+  name: 'city',
+  placeholder: 'São Paulo',
+}
+
+export const Endereço = Template.bind({})
+
+Endereço.args = {
+  label: 'Endereço Completo',
+  inputType: 'text',
+  name: 'address',
+  placeholder: 'Avenida, Rua, Bairro, Número...',
+}
