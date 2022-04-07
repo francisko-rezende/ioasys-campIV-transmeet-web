@@ -16,6 +16,10 @@ const StoryTemplate: ComponentStory<typeof SelectInput> = (args) => (
 )
 
 export const Template = StoryTemplate.bind({})
+Template.args = {
+  name: 'Label',
+  options: ['first', 'second', 'third'],
+}
 
 export const DDD = StoryTemplate.bind({})
 
