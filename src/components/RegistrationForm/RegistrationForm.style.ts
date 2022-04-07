@@ -6,7 +6,6 @@ export const Container = styled.section`
   margin-bottom: 55px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 `
 
