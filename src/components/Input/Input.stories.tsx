@@ -119,3 +119,12 @@ Endereço.args = {
   name: 'address',
   placeholder: 'Avenida, Rua, Bairro, Número...',
 }
+
+export const Outro = Template.bind({})
+
+Outro.args = {
+  label: 'Outro? Qual',
+  inputType: 'text',
+  name: 'other',
+  inputWidth: '221px',
+}
