@@ -44,6 +44,7 @@ export const Button = styled.button<StyledButtonProps>`
   border: none;
   cursor: pointer;
   height: 40px;
+  transition: all 300ms;
 
   ${({ length, theme, color, hasIcon, isActive }) => css`
     background-color: ${theme.colors.primaryColor.primary};
@@ -55,5 +56,5 @@ export const Button = styled.button<StyledButtonProps>`
     ${hasIcon && buttonVariants.withChevron}
     ${!!color && buttonVariants[color!](theme)}
     ${!isActive && buttonVariants.notChosen(theme)}
-  `}
+  `};
 `
