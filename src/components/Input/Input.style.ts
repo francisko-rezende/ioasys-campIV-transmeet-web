@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const Label = styled.label`
   z-index: 2;
   position: relative;
-  left: 27px;
+  left: 13px;
   top: 10px;
   padding: 0 5px;
   width: fit-content;
