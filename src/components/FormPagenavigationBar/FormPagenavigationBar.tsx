@@ -22,8 +22,6 @@ const FormPagenavigationBar = ({
     activeOnPage === 1 ? setCurrentPage(1) : setCurrentPage(2)
   }
 
-  console.log(currentPage)
-
   return (
     <S.Button
       isActive={isActive}
