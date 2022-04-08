@@ -12,7 +12,9 @@ export default {
 //const Template: ComponentStory<typeof TransGeneralInfo> = (args) => <TransGeneralInfo {...args} />
 
 const Template: ComponentStory<typeof TransGeneralInfo> = () => (
-  <TransGeneralInfo />
+  <div style={{ maxWidth: '470px' }}>
+    <TransGeneralInfo />
+  </div>
 )
 
 export const Default = Template.bind({})
