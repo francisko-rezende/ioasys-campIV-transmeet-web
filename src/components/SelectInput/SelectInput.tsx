@@ -12,10 +12,13 @@ const SelectInput = ({ name, options, selectWidth }: SelectProps) => {
   return (
     <S.Wrapper>
       <S.Label htmlFor={name}>{name}</S.Label>
-      <S.Select name={name} id={name} selectWidth={selectWidth}>
-        <option disabled selected>
-          Selecionar
-        </option>
+      <S.Select
+        name={name}
+        id={name}
+        selectWidth={selectWidth}
+        defaultValue="Selecionar"
+      >
+        <option disabled>Selecionar</option>
         {!!options &&
           options.map((option) => (
             <option value={option} key={option}>
