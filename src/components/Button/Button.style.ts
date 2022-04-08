@@ -17,6 +17,11 @@ const buttonVariants = {
     width: 270px;
   `,
 
+  full: () => css`
+    padding: 6px;
+    width: 100%;
+  `,
+
   primary: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.primaryColor.primary};
   `,
@@ -44,7 +49,7 @@ export const Button = styled.button<StyledButtonProps>`
   border: none;
   cursor: pointer;
   height: 40px;
-  transition: all 300ms;
+  transition: color 300ms;
 
   ${({ length, theme, color, hasIcon, isActive }) => css`
     background-color: ${theme.colors.primaryColor.primary};

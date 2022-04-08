@@ -3,7 +3,7 @@ import React from 'react'
 import * as S from './Button.style'
 
 export type ButtonProps = {
-  length?: 'short' | 'long'
+  length?: 'short' | 'long' | 'full'
   color?: 'primary' | 'secondary'
   children?: React.ReactNode
   icon?: React.ReactNode
