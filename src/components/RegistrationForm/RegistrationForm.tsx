@@ -2,11 +2,13 @@ import React from 'react'
 
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
+import FormPagenavigationBar from '../FormPagenavigationBar'
 import TransGeneralInfo from '../TransGeneralInfo'
 import * as S from './RegistrationForm.style'
 
 const RegistrationForm = () => {
   const [activeForm, setActiveForm] = React.useState('Trans')
+  const [currentPage, setCurrentPage] = React.useState(1)
 
   type FormTypes = {
     Trans: React.ReactNode
@@ -58,9 +60,28 @@ const RegistrationForm = () => {
         </Button>
       </S.TagContainer>
       {forms[activeForm as keyof FormTypes]}
-      <Button color="secondary" icon={<Chevron />} length="long">
-        Continuar
-      </Button>
+      <S.ContinueButtonWrapper>
+        <Button
+          color="secondary"
+          icon={<Chevron />}
+          length="long"
+          onClick={() => setCurrentPage(2)}
+        >
+          Continuar
+        </Button>
+      </S.ContinueButtonWrapper>
+      <S.FormNavigationBarWrapper>
+        <FormPagenavigationBar
+          currentPage={currentPage}
+          activeOnPage={1}
+          setCurrentPage={setCurrentPage}
+        />
+        <FormPagenavigationBar
+          currentPage={currentPage}
+          activeOnPage={2}
+          setCurrentPage={setCurrentPage}
+        />
+      </S.FormNavigationBarWrapper>
     </S.Container>
   )
 }

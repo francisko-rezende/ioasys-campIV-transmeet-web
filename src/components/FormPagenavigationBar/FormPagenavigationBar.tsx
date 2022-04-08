@@ -1,21 +1,35 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
 import * as S from './FormPagenavigationBar.style'
 
-export type FormPagenavigationBarProps = {
-  currentPage?: number
-  activeOnPage?: number
+export type FormPageNavigationBarProps = {
+  currentPage: number
+  setCurrentPage: Dispatch<SetStateAction<number>>
+  activeOnPage: number
 }
 
 const FormPagenavigationBar = ({
   currentPage,
   activeOnPage,
-}: FormPagenavigationBarProps) => {
+  setCurrentPage,
+}: FormPageNavigationBarProps) => {
   const isActive = currentPage === activeOnPage
+  const handlePageChange = (
+    activeOnPage: number,
+    // currentPage: number,
+    setCurrentPage: (arg: number) => void,
+  ) => {
+    activeOnPage === 1 ? setCurrentPage(1) : setCurrentPage(2)
+  }
 
-  console.log(isActive)
+  console.log(currentPage)
 
-  return <S.Button isActive={isActive}></S.Button>
+  return (
+    <S.Button
+      isActive={isActive}
+      onClick={() => handlePageChange(activeOnPage, setCurrentPage)}
+    ></S.Button>
+  )
 }
 
 export default FormPagenavigationBar

@@ -35,3 +35,17 @@ export const TagContainer = styled.div`
   gap: 20px;
   margin-bottom: 38px;
 `
+
+export const ContinueButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 52px;
+`
+
+export const FormNavigationBarWrapper = styled.div`
+  width: 100%;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, 1fr);
+  /* display: flex; */
+`
