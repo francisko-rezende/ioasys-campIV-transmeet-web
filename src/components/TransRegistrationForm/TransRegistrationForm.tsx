@@ -20,7 +20,11 @@ const TransRegistrationForm = ({
       {currentPage === 1 ? (
         <TransGeneralInfo />
       ) : (
-        <RegistrationTransConfirmation specificInstructions="Fale para nós um pouco sobre seus interesses..." />
+        <RegistrationTransConfirmation
+          specificInstructions="Fale para nós um pouco sobre seus interesses..."
+          textAreaPlaceholder="Descreva aqui com o que gostaria de estudar e trabalhar, suas
+        habilidades..."
+        />
       )}
       <S.ContinueButtonWrapper>
         {currentPage === 1 ? (

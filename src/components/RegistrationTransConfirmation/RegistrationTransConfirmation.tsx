@@ -7,10 +7,12 @@ import * as S from './RegistrationTransConfirmation.style'
 
 export type RegistrationTransConfirmationProps = {
   specificInstructions: string
+  textAreaPlaceholder: string
 }
 
 const RegistrationTransConfirmation = ({
   specificInstructions,
+  textAreaPlaceholder,
 }: RegistrationTransConfirmationProps) => {
   const passwordProps = useFormValidation('password')
   const confirmPasswordProps = useFormValidation(false)
@@ -23,11 +25,7 @@ const RegistrationTransConfirmation = ({
       </S.GeneralInstructions>
       <S.SpecificInstructions>{specificInstructions}</S.SpecificInstructions>
       <S.Form>
-        <S.TextArea
-          defaultValue="Descreva aqui com o que gostaria de estudar e trabalhar, suas
-          habilidades..."
-          rows={10}
-        ></S.TextArea>
+        <S.TextArea defaultValue={textAreaPlaceholder} rows={10}></S.TextArea>
         <Input
           label="Senha"
           inputType="password"
