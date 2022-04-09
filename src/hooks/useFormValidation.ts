@@ -17,9 +17,17 @@ interface InputTypes {
     regex: RegExp
     message: string
   }
+  cnpj: {
+    regex: RegExp
+    message: string
+  }
 }
 
 const inputTypes: InputTypes = {
+  cnpj: {
+    regex: /^[0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2}$/,
+    message: 'Ops... Insira um CNPJ válido',
+  },
   email: {
     regex:
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,

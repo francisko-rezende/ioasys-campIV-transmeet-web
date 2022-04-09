@@ -36,13 +36,6 @@ export const TagContainer = styled.div`
   margin-bottom: 38px;
 `
 
-export const ContinueButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 52px;
-  width: 100%;
-`
-
 export const FormNavigationBarWrapper = styled.div`
   width: 100%;
   display: grid;

@@ -5,19 +5,23 @@ import AcceptTermsRadio from '../AcceptTermsRadio'
 import Input from '../Input'
 import * as S from './RegistrationTransConfirmation.style'
 
-const RegistrationTransConfirmation = () => {
+export type RegistrationTransConfirmationProps = {
+  specificInstructions: string
+}
+
+const RegistrationTransConfirmation = ({
+  specificInstructions,
+}: RegistrationTransConfirmationProps) => {
   const passwordProps = useFormValidation('password')
   const confirmPasswordProps = useFormValidation(false)
 
   return (
     <>
-      <S.Title>Crie sua conta</S.Title>
+      {/* <S.Title>Crie sua conta</S.Title> */}
       <S.GeneralInstructions>
         Preencha os campos abaixo para finalizar seu registro na Transmeet
       </S.GeneralInstructions>
-      <S.SpecificInstructions>
-        Fale para nós um pouco sobre seus interesses...
-      </S.SpecificInstructions>
+      <S.SpecificInstructions>{specificInstructions}</S.SpecificInstructions>
       <S.Form>
         <S.TextArea
           defaultValue="Descreva aqui com o que gostaria de estudar e trabalhar, suas
