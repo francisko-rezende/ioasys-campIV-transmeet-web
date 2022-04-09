@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Button from '../Button'
+import CompanyRegistrationForm from '../CompanyRegistrationForm'
 import FormPagenavigationBar from '../FormPagenavigationBar'
 import TransRegistrationForm from '../TransRegistrationForm'
 import * as S from './RegistrationForm.style'
@@ -25,16 +26,20 @@ const RegistrationForm = () => {
         setCurrentPage={setCurrentPage}
       />
     ),
-    'Não Trans': <h1>Registro de pessoa NÃO trans</h1>,
-    Empresa: <h1>Registro de empresa</h1>,
+    'Não Trans': <h1>Cadastro de pessoa NÃO trans</h1>,
+    Empresa: (
+      <CompanyRegistrationForm
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+    ),
   }
 
-  // todo refactor this!
-  // const handleSettingActiveForm = (
-  //   e: Event & {
-  //     target: HTMLButtonElement
-  //   },
-  // ) => setActiveForm(e.target.textContent!)
+  const handleSettingActiveForm = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent> & {
+      target: HTMLButtonElement
+    },
+  ): void => setActiveForm(e.target.textContent!)
 
   return (
     <S.Container>
@@ -45,19 +50,19 @@ const RegistrationForm = () => {
       </S.Paragraph>
       <S.TagContainer>
         <Button
-          onClick={(e) => setActiveForm(e.target.textContent!)}
+          onClick={handleSettingActiveForm}
           isActive={checkIfActive('Trans')}
         >
           Trans
         </Button>
         <Button
-          onClick={(e) => setActiveForm(e.target.textContent!)}
+          onClick={handleSettingActiveForm}
           isActive={checkIfActive('Não Trans')}
         >
           Não Trans
         </Button>
         <Button
-          onClick={(e) => setActiveForm(e.target.textContent!)}
+          onClick={handleSettingActiveForm}
           isActive={checkIfActive('Empresa')}
         >
           Empresa
