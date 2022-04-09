@@ -13,7 +13,10 @@ export default {
 
 const Template: ComponentStory<typeof RegistrationTransConfirmation> = () => (
   <div style={{ maxWidth: '470px' }}>
-    <RegistrationTransConfirmation />
+    <RegistrationTransConfirmation
+      specificInstructions="ola marilene"
+      textAreaPlaceholder="hoje a noite"
+    />
   </div>
 )
 
