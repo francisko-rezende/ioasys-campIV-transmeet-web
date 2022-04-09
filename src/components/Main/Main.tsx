@@ -31,6 +31,26 @@ const Main = ({
       gender: 'Masculino',
     }
 
+    // api
+    //   .post('/posts', {
+    //     nome: 'josias',
+    //   })
+    //   .then((data) => console.log(data))
+
+    // api.get('/posts').then(({ data }) => console.log(data))
+    // api
+    //   .post(
+    //     '/user',
+    //     { name: 'Maria da Silva', birthday_date: '15/06/2000' },
+    //     {
+    //       headers: {
+    //         'Access-Control-Allow-Origin':
+    //           'https://transmeet.herokuapp.com/user',
+    //       },
+    //     },
+    //   )
+    //   .then((data) => console.log(data))
+
     // fetch('https://transmeet.herokuapp.com/user', {
     //   method: 'POST',
     //   body: JSON.stringify(payload),
