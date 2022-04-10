@@ -12,7 +12,7 @@ const LoginForm = () => {
   const [password, setPassword] = React.useState('')
 
   return (
-    <S.Wrapper>
+    <S.Form>
       <S.LogoWrapper>
         <Logo />
       </S.LogoWrapper>
@@ -24,15 +24,19 @@ const LoginForm = () => {
         <InputWithIcon
           label="E-mail"
           type="email"
+          name="email"
           icon={<MailIcon />}
           value={password}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setPassword(e.target.value)
           }
+          required
         />
         <InputWithIcon
+          required
           label="Password"
           type="password"
+          name="password"
           icon={<LockIcon />}
           value={userEmail}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -47,7 +51,7 @@ const LoginForm = () => {
       <S.RegisterText>
         Ainda não tem uma conta? <S.Link>Cadastre-se aqui</S.Link>.
       </S.RegisterText>
-    </S.Wrapper>
+    </S.Form>
   )
 }
 

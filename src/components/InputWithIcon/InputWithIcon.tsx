@@ -7,7 +7,9 @@ export type InputWithIconProps = {
   icon?: React.ReactNode
   type?: string
   value?: string
+  name?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  required?: boolean | undefined
 }
 
 const InputWithIcon = ({
@@ -16,12 +18,20 @@ const InputWithIcon = ({
   type = 'text',
   value,
   onChange,
+  name,
+  ...props
 }: InputWithIconProps) => {
   return (
     <S.Wrapper>
       <S.Label>{label}</S.Label>
-      {!!icon && <S.MailIconWrapper>{icon}</S.MailIconWrapper>}
-      <S.Input type={type} value={value} onChange={onChange} />
+      {!!icon && <S.IconWrapper>{icon}</S.IconWrapper>}
+      <S.Input
+        type={type}
+        value={value}
+        onChange={onChange}
+        name={name}
+        {...props}
+      />
     </S.Wrapper>
   )
 }

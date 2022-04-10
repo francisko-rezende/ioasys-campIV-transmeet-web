@@ -16,7 +16,7 @@ export const Label = styled.label`
   z-index: 2;
   position: absolute;
   left: 11px;
-  top: -4px;
+  top: -5px;
   padding: 0 5px;
   width: fit-content;
 
@@ -52,7 +52,7 @@ export const Input = styled.input`
   `}
 `
 
-export const MailIconWrapper = styled.div`
+export const IconWrapper = styled.div`
   width: 24px;
   height: 24px;
   margin: 0 0 0 16px;
