@@ -6,9 +6,9 @@ import Input from '../Input'
 import SelectInput from '../SelectInput'
 import { areaCodes } from '../SelectInput/areaCodes'
 import { states } from '../SelectInput/states'
-import * as S from './TransGeneralInfo.style'
+import * as S from './TransRegistrationFirstPage.style'
 
-const TransGeneralInfo = () => {
+const TransRegistrationFirstPage = () => {
   const nameProps = useFormValidation(false)
   const emailProps = useFormValidation('email')
   const phoneProps = useFormValidation('phone')
@@ -55,4 +55,4 @@ const TransGeneralInfo = () => {
   )
 }
 
-export default TransGeneralInfo
+export default TransRegistrationFirstPage

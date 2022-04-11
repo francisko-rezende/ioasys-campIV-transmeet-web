@@ -1,12 +1,12 @@
 import React from 'react'
 
-import * as S from './AcceptTermsRadio.style'
+import * as S from './AcceptTermsCheckbox.style'
 
-export type AcceptTermsRadioProps = {
+export type AcceptTermsCheckboxProps = {
   label: string
 }
 
-const AcceptTermsRadio = ({ label = 'label' }: AcceptTermsRadioProps) => {
+const AcceptTermsCheckbox = ({ label = 'label' }: AcceptTermsCheckboxProps) => {
   const [acceptTerms, setAcceptTerms] = React.useState(false)
   return (
     <S.Wrapper>
@@ -22,4 +22,4 @@ const AcceptTermsRadio = ({ label = 'label' }: AcceptTermsRadioProps) => {
   )
 }
 
-export default AcceptTermsRadio
+export default AcceptTermsCheckbox

@@ -1,19 +1,19 @@
 import React from 'react'
 
 import useFormValidation from '../../hooks/useFormValidation'
-import AcceptTermsRadio from '../AcceptTermsRadio'
+import AcceptTermsRadio from '../AcceptTermsCheckbox'
 import Input from '../Input'
-import * as S from './RegistrationTransConfirmation.style'
+import * as S from './RegistrationConfirmation.style'
 
-export type RegistrationTransConfirmationProps = {
+export type RegistrationConfirmationProps = {
   specificInstructions: string
   textAreaPlaceholder: string
 }
 
-const RegistrationTransConfirmation = ({
+const RegistrationConfirmation = ({
   specificInstructions,
   textAreaPlaceholder,
-}: RegistrationTransConfirmationProps) => {
+}: RegistrationConfirmationProps) => {
   const passwordProps = useFormValidation('password')
   const confirmPasswordProps = useFormValidation(false)
 
@@ -48,4 +48,4 @@ const RegistrationTransConfirmation = ({
   )
 }
 
-export default RegistrationTransConfirmation
+export default RegistrationConfirmation

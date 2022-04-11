@@ -3,7 +3,7 @@ import React from 'react'
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
 import CompanyRegistrationFirstPage from '../CompanyRegistrationFirstPage'
-import RegistrationTransConfirmation from '../RegistrationTransConfirmation'
+import RegistrationConfirmation from '../RegistrationConfirmation'
 import * as S from './CompanyRegistrationForm.style'
 
 export type CompanyRegistrationFormProps = {
@@ -20,7 +20,7 @@ const CompanyRegistrationForm = ({
       {currentPage === 1 ? (
         <CompanyRegistrationFirstPage />
       ) : (
-        <RegistrationTransConfirmation
+        <RegistrationConfirmation
           specificInstructions="Fale para nós um pouco sobre a sua empresa..."
           textAreaPlaceholder="Descreva aqui com o que a sua empresa faz, com o que trabalha, seus valores..."
         />

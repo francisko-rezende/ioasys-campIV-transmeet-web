@@ -2,8 +2,8 @@ import React from 'react'
 
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
-import RegistrationTransConfirmation from '../RegistrationTransConfirmation'
-import TransGeneralInfo from '../TransGeneralInfo'
+import RegistrationConfirmation from '../RegistrationConfirmation'
+import TransRegistrationFirstPage from '../TransRegistrationFirstPage'
 import * as S from './TransRegistrationForm.style'
 
 export type TransRegistrationFormProps = {
@@ -18,9 +18,9 @@ const TransRegistrationForm = ({
   return (
     <S.Wrapper>
       {currentPage === 1 ? (
-        <TransGeneralInfo />
+        <TransRegistrationFirstPage />
       ) : (
-        <RegistrationTransConfirmation
+        <RegistrationConfirmation
           specificInstructions="Fale para nós um pouco sobre seus interesses..."
           textAreaPlaceholder="Descreva aqui com o que gostaria de estudar e trabalhar, suas
         habilidades..."

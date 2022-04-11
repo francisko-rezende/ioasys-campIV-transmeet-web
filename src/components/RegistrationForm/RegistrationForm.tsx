@@ -12,7 +12,7 @@ const RegistrationForm = () => {
 
   type FormTypes = {
     Trans: React.ReactNode
-    'Não Trans': React.ReactNode
+    // 'Não Trans': React.ReactNode
     Empresa: React.ReactNode
   }
 
@@ -26,7 +26,7 @@ const RegistrationForm = () => {
         setCurrentPage={setCurrentPage}
       />
     ),
-    'Não Trans': <h1>Cadastro de pessoa NÃO trans</h1>,
+    // 'Não Trans': <h1>Cadastro de pessoa NÃO trans</h1>,
     Empresa: (
       <CompanyRegistrationForm
         currentPage={currentPage}
@@ -44,30 +44,35 @@ const RegistrationForm = () => {
   return (
     <S.Container>
       <S.Title>Crie sua conta</S.Title>
-      <S.Paragraph>
-        Selecione quem está se registrando e preencha os dados básicos
-        solicitados
-      </S.Paragraph>
-      <S.TagContainer>
-        <Button
-          onClick={handleSettingActiveForm}
-          isActive={checkIfActive('Trans')}
-        >
-          Trans
-        </Button>
-        <Button
-          onClick={handleSettingActiveForm}
-          isActive={checkIfActive('Não Trans')}
-        >
-          Não Trans
-        </Button>
-        <Button
-          onClick={handleSettingActiveForm}
-          isActive={checkIfActive('Empresa')}
-        >
-          Empresa
-        </Button>
-      </S.TagContainer>
+
+      {currentPage === 1 && (
+        <>
+          <S.Paragraph>
+            Selecione quem está se registrando e preencha os dados básicos
+            solicitados
+          </S.Paragraph>
+          <S.TagContainer>
+            <Button
+              onClick={handleSettingActiveForm}
+              isActive={checkIfActive('Trans')}
+            >
+              Trans
+            </Button>
+            {/* <Button
+            onClick={handleSettingActiveForm}
+            isActive={checkIfActive('Não Trans')}
+          >
+            Não Trans
+          </Button> */}
+            <Button
+              onClick={handleSettingActiveForm}
+              isActive={checkIfActive('Empresa')}
+            >
+              Empresa
+            </Button>
+          </S.TagContainer>
+        </>
+      )}
       {forms[activeForm as keyof FormTypes]}
       <S.FormNavigationBarWrapper>
         <FormPagenavigationBar

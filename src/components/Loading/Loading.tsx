@@ -4,7 +4,7 @@ import Spinner from '../../assets/icons/Loader.png'
 import * as S from './Loading.style'
 
 export type LoadingProps = {
-  isLoading: boolean
+  isLoading?: boolean
 }
 
 const Loading = ({ isLoading = true }: LoadingProps) => {

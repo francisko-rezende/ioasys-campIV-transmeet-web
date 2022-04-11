@@ -2,10 +2,10 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import AcceptTermsRadio from '.'
+import AcceptTermsCheckbox from '.'
 
 test('that AcceptTermsRadio renders properly', () => {
-  render(<AcceptTermsRadio label="label" />)
+  render(<AcceptTermsCheckbox label="label" />)
 
   // expect(screen.getByRole('heading', { name: /AcceptTermsRadio/i })).toBeInTheDocument()
 

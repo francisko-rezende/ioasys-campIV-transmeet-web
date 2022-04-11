@@ -2,12 +2,14 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import TransGeneralInfo from '.'
+import TransRegistrationFirstPage from '.'
 
 test('that TransGeneralInfo renders properly', () => {
-  render(<TransGeneralInfo />)
+  render(<TransRegistrationFirstPage />)
 
-  expect(screen.getByRole('heading', { name: /TransGeneralInfo/i })).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: /TransRegistrationFirstPage/i }),
+  ).toBeInTheDocument()
 
   //expect(screen.getByRole()).toMatchSnapshot()
 })
