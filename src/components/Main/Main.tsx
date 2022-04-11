@@ -1,10 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
 import axios from 'axios'
 
 import jsonPlaceholderCode from '../../polacode/postJSON.png'
 import transmeetCode from '../../polacode/postTransmeet.png'
-import api from '../../services/api'
 import * as S from './styles'
 
 const Main = ({
