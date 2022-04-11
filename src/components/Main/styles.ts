@@ -17,3 +17,8 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.h2``
+
+export const RequisitionsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`

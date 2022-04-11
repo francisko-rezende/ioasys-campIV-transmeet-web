@@ -9,7 +9,10 @@ import GlobalStyles from './styles/GlobalStyles'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <Main
+      title="Testando requisições POST"
+      description="Clique nos botões pra enviar as requisições usando o código mostrado nas imagens em cada coluna"
+    />
     <GlobalStyles />
   </React.StrictMode>,
   document.getElementById('root'),
