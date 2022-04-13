@@ -60,3 +60,4 @@ export const RegisterText = styled.a`
     margin-top: 64px;
   `}
 `
+export const SocialNetworksDivider = styled.span``

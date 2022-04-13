@@ -7,7 +7,7 @@ import { ReactComponent as LockIcon } from '../../assets/icons/lock.svg'
 import { ReactComponent as MailIcon } from '../../assets/icons/mail.svg'
 
 export default {
-  title: 'InputWithIcon',
+  title: 'Inputs/InputWithIcon',
   component: InputWithIcon,
 } as ComponentMeta<typeof InputWithIcon>
 

@@ -51,6 +51,7 @@ const LoginForm = () => {
       <S.RegisterText>
         Ainda não tem uma conta? <S.Link>Cadastre-se aqui</S.Link>.
       </S.RegisterText>
+      <S.SocialNetworksDivider>ou entre usando</S.SocialNetworksDivider>
     </S.Form>
   )
 }

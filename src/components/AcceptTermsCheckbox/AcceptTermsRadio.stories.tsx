@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import AcceptTermsCheckbox from '.'
 
 export default {
-  title: 'AcceptTermsCheckbox',
+  title: 'Inputs/AcceptTermsCheckbox',
   component: AcceptTermsCheckbox,
 } as ComponentMeta<typeof AcceptTermsCheckbox>
 

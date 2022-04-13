@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import CompanyRegistrationFirstPage from '.'
 
 export default {
-  title: 'CompanyRegistrationFirstPage',
+  title: 'Formulários/CompanyRegistrationFirstPage',
   component: CompanyRegistrationFirstPage,
 } as ComponentMeta<typeof CompanyRegistrationFirstPage>
 

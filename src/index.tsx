@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ThemeProvider } from 'styled-components'
 
+import LoginPage from './components/LoginPage'
 import reportWebVitals from './reportWebVitals'
 import GlobalStyles from './styles/GlobalStyles'
 import { theme } from './styles/theme'
@@ -10,6 +11,7 @@ import { theme } from './styles/theme'
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <LoginPage />
       <GlobalStyles />
     </ThemeProvider>
   </React.StrictMode>,

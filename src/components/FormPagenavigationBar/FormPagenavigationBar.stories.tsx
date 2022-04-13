@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import FormPagenavigationBar from '.'
 
 export default {
-  title: 'FormPagenavigationBar',
+  title: 'Formulários/Componentes/FormPagenavigationBar',
   component: FormPagenavigationBar,
 } as ComponentMeta<typeof FormPagenavigationBar>
 

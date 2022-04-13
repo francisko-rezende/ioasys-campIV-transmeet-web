@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import TransRegistrationFirstPage from '.'
 
 export default {
-  title: 'TransRegistrationFirstPage',
+  title: 'Formulários/TransRegistrationFirstPage',
   component: TransRegistrationFirstPage,
 } as ComponentMeta<typeof TransRegistrationFirstPage>
 

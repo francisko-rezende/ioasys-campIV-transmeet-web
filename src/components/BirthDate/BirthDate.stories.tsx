@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import BirthDate from '.'
 
 export default {
-  title: 'BirthDate',
+  title: 'Inputs/BirthDate',
   component: BirthDate,
 } as ComponentMeta<typeof BirthDate>
 

@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import RegistrationConfirmation from '.'
 
 export default {
-  title: 'RegistrationConfirmation',
+  title: 'Formulários/RegistrationConfirmation',
   component: RegistrationConfirmation,
 } as ComponentMeta<typeof RegistrationConfirmation>
 

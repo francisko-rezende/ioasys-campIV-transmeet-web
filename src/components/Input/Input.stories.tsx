@@ -6,7 +6,7 @@ import Input from '.'
 import useFormValidation from '../../hooks/useFormValidation'
 
 export default {
-  title: 'Input',
+  title: 'Inputs/Input',
   component: Input,
 } as ComponentMeta<typeof Input>
 

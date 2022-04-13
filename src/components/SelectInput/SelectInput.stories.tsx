@@ -7,7 +7,7 @@ import { areaCodes } from './areaCodes'
 import { states } from './states'
 
 export default {
-  title: 'SelectInput',
+  title: 'Inputs/SelectInput',
   component: SelectInput,
 } as ComponentMeta<typeof SelectInput>
 

@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import LoginForm from '.'
 
 export default {
-  title: 'LoginForm',
+  title: 'Formulários/LoginForm',
   component: LoginForm,
 } as ComponentMeta<typeof LoginForm>
 
