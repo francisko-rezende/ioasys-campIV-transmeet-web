@@ -1,7 +1,6 @@
 import React from 'react'
 
 import useFormValidation from '../../hooks/useFormValidation'
-import BirthDate from '../BirthDate'
 import Input from '../Input'
 import SelectInput from '../SelectInput'
 import { areaCodes } from '../SelectInput/areaCodes'
