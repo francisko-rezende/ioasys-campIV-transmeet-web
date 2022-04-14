@@ -6,16 +6,26 @@ import Input from '../Input'
 import * as S from './RegistrationConfirmation.style'
 
 export type RegistrationConfirmationProps = {
+  isTrans: boolean
   specificInstructions: string
   textAreaPlaceholder: string
 }
 
 const RegistrationConfirmation = ({
+  isTrans,
   specificInstructions,
   textAreaPlaceholder,
 }: RegistrationConfirmationProps) => {
   const passwordProps = useFormValidation('password')
   const confirmPasswordProps = useFormValidation(false)
+
+  const checkboxLabel = isTrans
+    ? `Ao criar a conta, eu afirmo que me defino como pessoa Trans e que ${(
+        <strong>concordo com os termos</strong>
+      )}.`
+    : `Ao criar a conta, eu afirmo que ${(
+        <strong>concordo com os termos</strong>
+      )}.`
 
   return (
     <>
@@ -38,11 +48,7 @@ const RegistrationConfirmation = ({
           name="Repita a senha"
           {...confirmPasswordProps}
         />
-        <AcceptTermsRadio
-          label={`Ao criar a conta, eu afirmo que me defino como pessoa Trans e que ${(
-            <strong>concordo com os termos</strong>
-          )}.`}
-        />
+        <AcceptTermsRadio label={checkboxLabel} />
       </S.Form>
     </>
   )

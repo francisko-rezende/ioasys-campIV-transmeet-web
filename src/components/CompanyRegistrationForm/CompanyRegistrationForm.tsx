@@ -21,6 +21,7 @@ const CompanyRegistrationForm = ({
         <CompanyRegistrationFirstPage />
       ) : (
         <RegistrationConfirmation
+          isTrans={false}
           specificInstructions="Fale para nós um pouco sobre a sua empresa..."
           textAreaPlaceholder="Descreva aqui com o que a sua empresa faz, com o que trabalha, seus valores..."
         />

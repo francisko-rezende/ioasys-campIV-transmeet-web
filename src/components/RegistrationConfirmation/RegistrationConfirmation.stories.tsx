@@ -16,8 +16,14 @@ const Template: ComponentStory<typeof RegistrationConfirmation> = () => (
     <RegistrationConfirmation
       specificInstructions="ola marilene"
       textAreaPlaceholder="hoje a noite"
+      isTrans={true}
     />
   </div>
 )
 
-export const Default = Template.bind({})
+export const PessoaTrans = Template.bind({})
+
+export const Empresa = Template.bind({})
+Empresa.args = {
+  isTrans: false,
+}

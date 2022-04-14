@@ -9,5 +9,5 @@ export const Wrapper = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: flex-end;
 `

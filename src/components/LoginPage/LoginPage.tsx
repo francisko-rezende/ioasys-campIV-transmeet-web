@@ -20,12 +20,14 @@ const settings: Settings = {
   nextArrow: <RightArrow />,
 }
 
-const LoginPage = () => {
+export type LoginPageProps = {
+  form: React.ReactNode
+}
+
+const LoginPage = ({ form }: LoginPageProps) => {
   return (
     <S.Background>
-      <S.FormContainer>
-        <LoginForm />
-      </S.FormContainer>
+      <S.FormContainer>{form}</S.FormContainer>
       <S.OnboardingContainer>
         <S.OnboardingWrapper>
           <Onboarding settings={settings}>

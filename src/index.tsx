@@ -11,7 +11,6 @@ import { theme } from './styles/theme'
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <LoginPage />
       <GlobalStyles />
     </ThemeProvider>
   </React.StrictMode>,

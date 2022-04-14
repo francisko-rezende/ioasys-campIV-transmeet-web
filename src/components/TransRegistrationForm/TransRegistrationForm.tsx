@@ -21,6 +21,7 @@ const TransRegistrationForm = ({
         <TransRegistrationFirstPage />
       ) : (
         <RegistrationConfirmation
+          isTrans={true}
           specificInstructions="Fale para nós um pouco sobre seus interesses..."
           textAreaPlaceholder="Descreva aqui com o que gostaria de estudar e trabalhar, suas
         habilidades..."
