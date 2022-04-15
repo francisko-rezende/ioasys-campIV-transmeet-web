@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
-import RegistrationConfirmation from '../RegistrationConfirmation'
+import TransRegistrationConfirmation from '../TransRegistrationConfirmation'
 import TransRegistrationFirstPage from '../TransRegistrationFirstPage'
 import * as S from './TransRegistrationForm.style'
 
@@ -11,36 +11,7 @@ export type TransRegistrationFormProps = {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
 
-export type StateId =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12
-  | 13
-  | 14
-  | 15
-  | 16
-  | 17
-  | 18
-  | 19
-  | 20
-  | 21
-  | 22
-  | 23
-  | 24
-  | 25
-  | 26
-  | 27
-
-export type Inputs = {
+export type TransInputs = {
   name: string
   email: string
   areaCode: string
@@ -64,7 +35,7 @@ const TransRegistrationForm = ({
 }: TransRegistrationFormProps) => {
   const [agreesWithTerms, setAgreesWithTerms] = React.useState(false)
 
-  const [inputs, setInputs] = React.useState<Inputs>({
+  const [inputs, setInputs] = React.useState<TransInputs>({
     name: '',
     email: '',
     areaCode: 'Selecionar',
@@ -86,12 +57,11 @@ const TransRegistrationForm = ({
       {currentPage === 1 ? (
         <TransRegistrationFirstPage inputs={inputs} setInputs={setInputs} />
       ) : (
-        <RegistrationConfirmation
+        <TransRegistrationConfirmation
           agreesWithTerms={agreesWithTerms}
           setAgreesWithTerms={setAgreesWithTerms}
           inputs={inputs}
           setInputs={setInputs}
-          isTrans={true}
           specificInstructions="Fale para nós um pouco sobre seus interesses..."
         />
       )}

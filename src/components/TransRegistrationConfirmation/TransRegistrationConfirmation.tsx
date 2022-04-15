@@ -4,14 +4,13 @@ import useFormValidation from '../../hooks/useFormValidation'
 import AcceptTermsRadio from '../AcceptTermsCheckbox'
 import Input from '../Input'
 import InputWithIcon from '../InputWithIcon'
-import { Inputs } from '../TransRegistrationForm/TransRegistrationForm'
-import * as S from './RegistrationConfirmation.style'
+import { TransInputs } from '../TransRegistrationForm/TransRegistrationForm'
+import * as S from './TransRegistrationConfirmation.style'
 
-export type RegistrationConfirmationProps = {
-  isTrans: boolean
+export type TransRegistrationConfirmationProps = {
   specificInstructions: string
-  inputs: Inputs
-  setInputs: React.Dispatch<React.SetStateAction<Inputs>>
+  inputs: TransInputs
+  setInputs: React.Dispatch<React.SetStateAction<TransInputs>>
   agreesWithTerms: boolean
   setAgreesWithTerms: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -27,7 +26,6 @@ export type Payload = {
   description: string
   telephone: string
   city: string
-  site?: string
   stateId: number | undefined
   typeId: 1 | 2
 }
@@ -63,9 +61,7 @@ const getStateId = (stateName: string) =>
     'Distrito Federal': 27,
   }[stateName])
 
-const generateRegNumber = () => String(Math.floor(Math.random() * 100000000))
-
-const generatePayload = (inputs: Inputs, isTrans: boolean): Payload => {
+const generatePayload = (inputs: TransInputs): Payload => {
   const {
     name,
     email,
@@ -74,34 +70,35 @@ const generatePayload = (inputs: Inputs, isTrans: boolean): Payload => {
     genderSelect: gender,
     description,
     city,
+    state,
     areaCode,
     phoneNumber,
+    cpf: regNumber,
   } = inputs
 
   return {
     name,
     email,
     password,
-    regNumber: generateRegNumber(),
+    regNumber,
     birthDate,
     address: 'Rua dos bobos, número 0',
     gender,
     description,
     telephone: `${areaCode}${phoneNumber}`,
     city,
-    stateId: 1,
-    typeId: isTrans ? 1 : 2,
+    stateId: getStateId(state),
+    typeId: 1,
   }
 }
 
-const RegistrationConfirmation = ({
+const TransRegistrationConfirmation = ({
   agreesWithTerms,
   setAgreesWithTerms,
   inputs,
   setInputs,
-  isTrans,
   specificInstructions,
-}: RegistrationConfirmationProps) => {
+}: TransRegistrationConfirmationProps) => {
   const passwordProps = useFormValidation('password')
 
   const [confirmPasswordError, setConfirmPasswordError] = React.useState('')
@@ -115,10 +112,6 @@ const RegistrationConfirmation = ({
     }
     setConfirmPasswordError('')
   }
-
-  const checkboxLabel = isTrans
-    ? 'Ao criar a conta, eu afirmo que me defino como pessoa Trans e '
-    : 'Ao criar a conta, eu afirmo que '
 
   return (
     <>
@@ -152,16 +145,18 @@ const RegistrationConfirmation = ({
           error={confirmPasswordError}
         />
         <AcceptTermsRadio
-          label={checkboxLabel}
+          label={
+            'Ao criar a conta, eu afirmo que me defino como pessoa Trans e '
+          }
           agreesWithTerms={agreesWithTerms}
           setAgreesWithTerms={setAgreesWithTerms}
         />
       </S.Form>
-      <button onClick={() => console.log(generatePayload(inputs, isTrans))}>
+      <button onClick={() => console.log(generatePayload(inputs))}>
         Imprime carai
       </button>
     </>
   )
 }
 
-export default RegistrationConfirmation
+export default TransRegistrationConfirmation

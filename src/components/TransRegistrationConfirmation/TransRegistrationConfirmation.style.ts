@@ -6,10 +6,6 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 20px;
   margin-bottom: 53px;
-  /* align-items: center; */
-  /* display: grid;
-  grid-template-rows: repeat(3, 56px);
-  gap: 20px; */
 `
 
 export const Title = styled.h2`
