@@ -23,7 +23,10 @@ const AcceptTermsCheckbox = ({
         }
         id="termos"
       />
-      <S.Label htmlFor="termos">{label}</S.Label>
+      <S.Label htmlFor="termos">
+        {label}
+        {<strong>concordo com os termos</strong>}
+      </S.Label>
     </S.Wrapper>
   )
 }

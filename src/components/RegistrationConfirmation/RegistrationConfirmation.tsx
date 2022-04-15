@@ -117,12 +117,8 @@ const RegistrationConfirmation = ({
   }
 
   const checkboxLabel = isTrans
-    ? `Ao criar a conta, eu afirmo que me defino como pessoa Trans e que ${(
-        <strong>concordo com os termos</strong>
-      )}.`
-    : `Ao criar a conta, eu afirmo que ${(
-        <strong>concordo com os termos</strong>
-      )}.`
+    ? 'Ao criar a conta, eu afirmo que me defino como pessoa Trans e '
+    : 'Ao criar a conta, eu afirmo que '
 
   return (
     <>
