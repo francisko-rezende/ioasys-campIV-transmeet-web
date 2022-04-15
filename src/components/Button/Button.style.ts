@@ -4,7 +4,7 @@ import { ButtonProps } from './Button'
 
 type StyledButtonProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'color' | 'length' | 'isActive'>
+} & Pick<ButtonProps, 'color' | 'length' | 'isActive' | 'disabled'>
 
 const buttonVariants = {
   short: () => css`
@@ -43,6 +43,11 @@ const buttonVariants = {
     background: ${theme.colors.neutralColors.gray};
     color: ${theme.colors.neutralColors.grayDark};
   `,
+  isDisabled: (theme: DefaultTheme) => css`
+    background: ${theme.colors.neutralColors.gray};
+    color: ${theme.colors.neutralColors.grayDark};
+    cursor: unset;
+  `,
 }
 
 export const Button = styled.button<StyledButtonProps>`
@@ -51,7 +56,7 @@ export const Button = styled.button<StyledButtonProps>`
   height: 40px;
   transition: color 300ms;
 
-  ${({ length, theme, color, hasIcon, isActive }) => css`
+  ${({ length, theme, color, hasIcon, isActive, disabled }) => css`
     background-color: ${theme.colors.primaryColor.primary};
     border-radius: ${theme.border.radius};
     color: ${theme.colors.typographyColors.white};
@@ -61,5 +66,6 @@ export const Button = styled.button<StyledButtonProps>`
     ${hasIcon && buttonVariants.withChevron}
     ${!!color && buttonVariants[color!](theme)}
     ${!isActive && buttonVariants.notChosen(theme)}
+    ${disabled && buttonVariants.isDisabled(theme)}
   `};
 `

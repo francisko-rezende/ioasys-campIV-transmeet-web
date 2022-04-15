@@ -13,7 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof TransRegistrationFirstPage> = () => (
   <div style={{ maxWidth: '470px' }}>
-    <TransRegistrationFirstPage />
+    {/* <TransRegistrationFirstPage /> */}
   </div>
 )
 

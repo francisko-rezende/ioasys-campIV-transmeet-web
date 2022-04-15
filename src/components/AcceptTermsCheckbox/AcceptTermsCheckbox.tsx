@@ -4,18 +4,24 @@ import * as S from './AcceptTermsCheckbox.style'
 
 export type AcceptTermsCheckboxProps = {
   label: string
+  agreesWithTerms: boolean
+  setAgreesWithTerms: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const AcceptTermsCheckbox = ({ label = 'label' }: AcceptTermsCheckboxProps) => {
-  const [acceptTerms, setAcceptTerms] = React.useState(false)
+const AcceptTermsCheckbox = ({
+  label = 'label',
+  agreesWithTerms,
+  setAgreesWithTerms,
+}: AcceptTermsCheckboxProps) => {
   return (
     <S.Wrapper>
       <input
         type="checkbox"
-        checked={acceptTerms}
-        onChange={() => setAcceptTerms((acceptTerms) => !acceptTerms)}
+        checked={agreesWithTerms}
+        onChange={() =>
+          setAgreesWithTerms((agreesWithTerms) => !agreesWithTerms)
+        }
         id="termos"
-        // onClick={() => setAcceptTerms((acceptTerms) => !acceptTerms)}
       />
       <S.Label htmlFor="termos">{label}</S.Label>
     </S.Wrapper>

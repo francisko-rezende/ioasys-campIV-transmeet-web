@@ -3,15 +3,24 @@ import React from 'react'
 import useFormValidation from '../../hooks/useFormValidation'
 import AcceptTermsRadio from '../AcceptTermsCheckbox'
 import Input from '../Input'
+import { User } from '../TransRegistrationForm/TransRegistrationForm'
 import * as S from './RegistrationConfirmation.style'
 
 export type RegistrationConfirmationProps = {
   isTrans: boolean
   specificInstructions: string
   textAreaPlaceholder: string
+  user: User
+  setUser: React.Dispatch<React.SetStateAction<User>>
+  agreesWithTerms: boolean
+  setAgreesWithTerms: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const RegistrationConfirmation = ({
+  agreesWithTerms,
+  setAgreesWithTerms,
+  user,
+  setUser,
   isTrans,
   specificInstructions,
   textAreaPlaceholder,
@@ -35,7 +44,14 @@ const RegistrationConfirmation = ({
       </S.GeneralInstructions>
       <S.SpecificInstructions>{specificInstructions}</S.SpecificInstructions>
       <S.Form>
-        <S.TextArea defaultValue={textAreaPlaceholder} rows={10}></S.TextArea>
+        <S.TextArea
+          value={user.description}
+          onChange={(e) => {
+            setUser({ ...user, description: e.target.value })
+          }}
+          defaultValue={textAreaPlaceholder}
+          rows={10}
+        ></S.TextArea>
         <Input
           label="Senha"
           inputType="password"
@@ -48,7 +64,11 @@ const RegistrationConfirmation = ({
           name="Repita a senha"
           {...confirmPasswordProps}
         />
-        <AcceptTermsRadio label={checkboxLabel} />
+        <AcceptTermsRadio
+          label={checkboxLabel}
+          agreesWithTerms={agreesWithTerms}
+          setAgreesWithTerms={setAgreesWithTerms}
+        />
       </S.Form>
     </>
   )

@@ -1,8 +1,16 @@
+import { userInfo } from 'os'
+
 import React from 'react'
 
+import { User } from '../TransRegistrationForm/TransRegistrationForm'
 import * as S from './BirthDate.style'
 
-const BirthDate = () => {
+type BirthDateProps = {
+  value: string
+  setUser: (value: React.SetStateAction<User>) => void
+}
+
+const BirthDate = ({ value, setUser }: BirthDateProps) => {
   const subtractYearsFromPresentDate = (yearsToSubtract: number): string => {
     // todo refactor this so it uses the lib Roberto suggested
     const today = new Date()
@@ -30,6 +38,10 @@ const BirthDate = () => {
         name="birthDate"
         min={todayMinus100years}
         max={todayMinus18years}
+        onChange={(e) => {
+          setUser((user) => ({ ...user, birthDate: e.target.value }))
+        }}
+        value={value}
       />
     </S.Wrapper>
   )

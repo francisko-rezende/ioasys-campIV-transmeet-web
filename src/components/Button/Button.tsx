@@ -7,6 +7,7 @@ export type ButtonProps = {
   color?: 'primary' | 'secondary'
   children?: React.ReactNode
   icon?: React.ReactNode
+  disabled?: boolean
   isActive?: boolean
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement> & {
@@ -22,6 +23,8 @@ const Button = ({
   icon,
   isActive = true,
   onClick,
+  disabled,
+  ...props
 }: ButtonProps) => {
   return (
     <S.Button
@@ -30,6 +33,8 @@ const Button = ({
       hasIcon={!!icon}
       isActive={isActive}
       onClick={onClick}
+      disabled={disabled}
+      {...props}
     >
       {!!children && <span>{children}</span>}
       {!!icon && icon}
