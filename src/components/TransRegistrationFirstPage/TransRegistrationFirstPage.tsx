@@ -6,48 +6,82 @@ import Input from '../Input'
 import SelectInput from '../SelectInput'
 import { areaCodes } from '../SelectInput/areaCodes'
 import { states } from '../SelectInput/states'
-import { User } from '../TransRegistrationForm/TransRegistrationForm'
+import { Inputs } from '../TransRegistrationForm/TransRegistrationForm'
 import * as S from './TransRegistrationFirstPage.style'
 
 export type TransRegistrationFirstPageProps = {
-  user: User
-  setUser: React.Dispatch<React.SetStateAction<User>>
+  inputs: Inputs
+  setInputs: React.Dispatch<React.SetStateAction<Inputs>>
 }
 
-const getStateId = (stateName: string) =>
-  ({
-    Acre: 1,
-    Alagoas: 2,
-    Amapá: 3,
-    Amazonas: 4,
-    Bahia: 5,
-    Ceará: 6,
-    'Espírito Santo': 7,
-    Goiás: 8,
-    Maranhão: 9,
-    'Mato Grosso': 10,
-    'Mato Grosso do Sul': 11,
-    'Minas Gerais': 12,
-    Pará: 13,
-    Paraná: 14,
-    Paraíba: 15,
-    Pernambuco: 16,
-    Piauí: 17,
-    'Rio de Janeiro': 18,
-    'Rio Grande do Norte': 19,
-    'Rio Grande do Sul': 20,
-    Rondônia: 21,
-    Roraima: 22,
-    'Santa Catarina': 23,
-    'São Paulo': 24,
-    Sergipe: 25,
-    Tocantins: 26,
-    'Distrito Federal': 27,
-  }[stateName])
+const getStatefromStateId = (stateID: number): string => {
+  const index = String(stateID)
+  type States = {
+    '1': string
+    '2': string
+    '3': string
+    '4': string
+    '5': string
+    '6': string
+    '7': string
+    '8': string
+    '9': string
+    '10': string
+    '11': string
+    '12': string
+    '13': string
+    '14': string
+    '15': string
+    '16': string
+    '17': string
+    '18': string
+    '19': string
+    '20': string
+    '21': string
+    '22': string
+    '23': string
+    '24': string
+    '25': string
+    '26': string
+    '27': string
+  }
+
+  const stateNames: States = {
+    '1': 'Acre',
+    '2': 'Alagoas',
+    '3': 'Amapá',
+    '4': 'Amazonas',
+    '5': 'Bahia',
+    '6': 'Ceará',
+    '7': 'Espírito Santo',
+    '8': 'Goiás',
+    '9': 'Maranhão',
+    '10': 'Mato Grosso',
+    '11': 'Mato Grosso do Sul',
+    '12': 'Minas Gerais',
+    '13': 'Pará',
+    '14': 'Paraná',
+    '15': 'Paraíba',
+    '16': 'Pernambuco',
+    '17': 'Piauí',
+    '18': 'Rio de Janeiro',
+    '19': 'Rio Grande do Nort',
+    '20': 'Rio Grande do Sul',
+    '21': 'Rondônia',
+    '22': 'Roraima',
+    '23': 'Santa Catarina',
+    '24': 'São Paulo',
+    '25': 'Sergipe',
+    '26': 'Tocantins',
+    '27': 'Distrito Federal',
+  }
+
+  return stateNames[index as keyof States]
+}
 
 const TransRegistrationFirstPage = ({
-  user,
-  setUser,
+  inputs,
+  setInputs,
 }: TransRegistrationFirstPageProps) => {
   const nameProps = useFormValidation(false)
   const emailProps = useFormValidation('email')
@@ -55,25 +89,6 @@ const TransRegistrationFirstPage = ({
   const cityProps = useFormValidation(false)
   const cpfProps = useFormValidation('cpf')
   const otherProps = useFormValidation(false)
-
-  const [areaCode, setAreaCode] = React.useState('')
-  const [state, setState] = React.useState('')
-  const [gender, setGender] = React.useState('')
-  const [phoneNumber, setPhoneNumber] = React.useState('')
-
-  React.useEffect(() => {
-    setUser({ ...user, stateId: getStateId(state) })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state])
-
-  React.useEffect(() => {
-    setUser({ ...user, telephone: `${areaCode}${phoneNumber}` })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [areaCode, phoneNumber])
-
-  React.useEffect(() => {
-    setUser({ ...user, gender })
-  }, [gender])
 
   return (
     <S.Form>
@@ -83,9 +98,10 @@ const TransRegistrationFirstPage = ({
         name="nome"
         {...nameProps}
         placeholder="Paloma Bernardi"
-        value={user.name}
+        value={inputs.name}
         onChange={(e) => {
-          setUser({ ...user, name: e.target.value })
+          setInputs({ ...inputs, name: e.target.value })
+          console.log(inputs)
         }}
       />
       <Input
@@ -94,26 +110,28 @@ const TransRegistrationFirstPage = ({
         name="email"
         {...emailProps}
         placeholder="paloma@email.com.br"
-        value={user.email}
+        value={inputs.email}
         onChange={(e) => {
-          setUser({ ...user, email: e.target.value })
+          setInputs({ ...inputs, email: e.target.value })
         }}
       />
       <S.PhoneLineWrapper>
         <SelectInput
           name="DDD"
           options={areaCodes}
-          value={areaCode}
-          onChange={setAreaCode}
+          value={inputs.areaCode}
+          onChange={(e) => {
+            setInputs({ ...inputs, areaCode: e.target.value })
+          }}
         />
         <Input
           label="Telefone"
           inputType="tel"
           name="tel"
           {...phoneProps}
-          value={phoneNumber}
+          value={inputs.phoneNumber}
           onChange={(e) => {
-            setPhoneNumber(e.target.value)
+            setInputs({ ...inputs, phoneNumber: e.target.value })
           }}
         />
       </S.PhoneLineWrapper>
@@ -123,24 +141,33 @@ const TransRegistrationFirstPage = ({
           inputType="text"
           name="city"
           {...cityProps}
-          value={user.city}
-          onChange={(e) => setUser({ ...user, city: e.target.value })}
+          value={inputs.city}
+          onChange={(e) => setInputs({ ...inputs, city: e.target.value })}
         />
         <SelectInput
           name="Estado"
           options={states}
-          value={state}
-          onChange={setState}
+          value={inputs.state}
+          onChange={(e) => {
+            setInputs({ ...inputs, state: e.target.value })
+          }}
         />
       </S.LocationLineWrapper>
-      <BirthDate value={user.birthDate} setUser={setUser} />
+      <BirthDate
+        value={inputs.birthDate}
+        onChange={(e) => {
+          setInputs({ ...inputs, birthDate: e.target.value })
+        }}
+      />
       <Input label="CPF" inputType="tel" name="cpf" {...cpfProps} />
       <S.GenderLineWrapper>
         <SelectInput
           name="Gênero"
-          value={gender}
-          onChange={setGender}
-          options={['Feminino', 'Masculino', 'Não Binário']}
+          value={inputs.genderSelect}
+          onChange={(e) => {
+            setInputs({ ...inputs, genderSelect: e.target.value })
+          }}
+          options={['Feminino', 'Masculino', 'Não Binário', 'Outro']}
         />
         <Input
           label="Outro? Qual?"

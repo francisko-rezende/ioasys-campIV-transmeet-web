@@ -7,10 +7,10 @@ import * as S from './BirthDate.style'
 
 type BirthDateProps = {
   value: string
-  setUser: (value: React.SetStateAction<User>) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const BirthDate = ({ value, setUser }: BirthDateProps) => {
+const BirthDate = ({ value, onChange }: BirthDateProps) => {
   const subtractYearsFromPresentDate = (yearsToSubtract: number): string => {
     // todo refactor this so it uses the lib Roberto suggested
     const today = new Date()
@@ -38,9 +38,7 @@ const BirthDate = ({ value, setUser }: BirthDateProps) => {
         name="birthDate"
         min={todayMinus100years}
         max={todayMinus18years}
-        onChange={(e) => {
-          setUser((user) => ({ ...user, birthDate: e.target.value }))
-        }}
+        onChange={onChange}
         value={value}
       />
     </S.Wrapper>

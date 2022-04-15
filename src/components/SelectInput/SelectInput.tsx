@@ -6,7 +6,9 @@ export type SelectProps = {
   name?: string
   options?: string[]
   selectWidth?: string
-  onChange: React.Dispatch<React.SetStateAction<string>>
+  // onChange: React.Dispatch<React.SetStateAction<string>>
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+
   value: string
 }
 
@@ -26,9 +28,11 @@ const SelectInput = ({
         selectWidth={selectWidth}
         defaultValue="Selecionar"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
       >
-        <option disabled>Selecionar</option>
+        <option disabled selected>
+          Selecionar
+        </option>
         {!!options &&
           options.map((option) => (
             <option value={option} key={option}>

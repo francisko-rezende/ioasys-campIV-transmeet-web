@@ -40,58 +40,59 @@ export type StateId =
   | 26
   | 27
 
-export type User = {
+export type Inputs = {
   name: string
   email: string
-  password: string
-  regNumber: string
-  birthDate: string
-  address: string
-  gender: string
-  description: string
-  telephone: string
+  areaCode: string
+  phoneNumber: string
   city: string
-  stateId: number | undefined
-  typeId: 1 | 2
+  state: string
+  birthDate: string
+  cpf: string
+  genderSelect: string
+  genderOther: string
+  description: string
+  password: string
+  confirmPassword: string
 }
+
+//todo change page from number to discrete entity
 
 const TransRegistrationForm = ({
   currentPage,
   setCurrentPage,
 }: TransRegistrationFormProps) => {
-  const generateRegNumber = () => String(Math.floor(Math.random() * 100000000))
-
   const [agreesWithTerms, setAgreesWithTerms] = React.useState(false)
 
-  const [user, setUser] = React.useState<User>({
+  const [inputs, setInputs] = React.useState<Inputs>({
     name: '',
     email: '',
-    password: '',
-    regNumber: generateRegNumber(),
-    birthDate: '',
-    address: '',
-    gender: '',
-    description: '',
-    telephone: '',
+    areaCode: 'Selecionar',
+    phoneNumber: '',
     city: '',
-    stateId: 1,
-    typeId: 1,
+    state: 'Selecionar',
+    birthDate: '',
+    cpf: '',
+    genderSelect: 'Selecionar',
+    genderOther: '',
+    description:
+      'Descreva aqui com o que gostaria de estudar e trabalhar, suas habilidades...',
+    password: '',
+    confirmPassword: '',
   })
 
   return (
     <S.Wrapper>
       {currentPage === 1 ? (
-        <TransRegistrationFirstPage user={user} setUser={setUser} />
+        <TransRegistrationFirstPage inputs={inputs} setInputs={setInputs} />
       ) : (
         <RegistrationConfirmation
           agreesWithTerms={agreesWithTerms}
           setAgreesWithTerms={setAgreesWithTerms}
-          user={user}
-          setUser={setUser}
+          inputs={inputs}
+          setInputs={setInputs}
           isTrans={true}
           specificInstructions="Fale para nós um pouco sobre seus interesses..."
-          textAreaPlaceholder="Descreva aqui com o que gostaria de estudar e trabalhar, suas
-        habilidades..."
         />
       )}
       <S.ContinueButtonWrapper>
@@ -108,7 +109,7 @@ const TransRegistrationForm = ({
           <Button
             color="secondary"
             length="full"
-            onClick={() => console.log('cliquei')}
+            onClick={() => console.log(inputs)}
             disabled={!agreesWithTerms}
           >
             Criar conta

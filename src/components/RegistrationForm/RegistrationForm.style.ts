@@ -46,5 +46,6 @@ export const FormNavigationBarWrapper = styled.div`
   gap: 6px;
   grid-template-columns: repeat(2, 1fr);
   align-self: end;
+  margin-bottom: 10px;
   /* display: flex; */
 `
