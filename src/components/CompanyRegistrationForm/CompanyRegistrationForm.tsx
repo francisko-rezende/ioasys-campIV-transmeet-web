@@ -2,8 +2,9 @@ import React from 'react'
 
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
+import CompanyRegistrationConfirmation from '../CompanyRegistrationConfirmation'
 import CompanyRegistrationFirstPage from '../CompanyRegistrationFirstPage'
-import RegistrationConfirmation from '../RegistrationConfirmation'
+import RegistrationConfirmation from '../TransRegistrationConfirmation'
 import * as S from './CompanyRegistrationForm.style'
 
 export type CompanyRegistrationFormProps = {
@@ -11,19 +12,54 @@ export type CompanyRegistrationFormProps = {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
 
+export type CompanyInputs = {
+  name: string
+  email: string
+  areaCode: string
+  phoneNumber: string
+  city: string
+  state: string
+  address: string
+  cnpj: string
+  site: string
+  description: string
+  password: string
+  confirmPassword: string
+}
+
 const CompanyRegistrationForm = ({
   currentPage,
   setCurrentPage,
 }: CompanyRegistrationFormProps) => {
+  const [agreesWithTerms, setAgreesWithTerms] = React.useState(false)
+
+  const [inputs, setInputs] = React.useState<CompanyInputs>({
+    name: '',
+    email: '',
+    areaCode: 'Selecionar',
+    phoneNumber: '',
+    address: '',
+    city: '',
+    state: 'Selecionar',
+    cnpj: '',
+    site: '',
+    description:
+      'Descreva aqui com o que a sua empresa faz, com o que trabalha, seus valores...',
+    password: '',
+    confirmPassword: '',
+  })
+
   return (
     <S.Wrapper>
       {currentPage === 1 ? (
-        <CompanyRegistrationFirstPage />
+        <CompanyRegistrationFirstPage inputs={inputs} setInputs={setInputs} />
       ) : (
-        <RegistrationConfirmation
-          isTrans={false}
-          specificInstructions="Fale para nós um pouco sobre a sua empresa..."
-          textAreaPlaceholder="Descreva aqui com o que a sua empresa faz, com o que trabalha, seus valores..."
+        <CompanyRegistrationConfirmation
+          agreesWithTerms={agreesWithTerms}
+          setAgreesWithTerms={setAgreesWithTerms}
+          inputs={inputs}
+          setInputs={setInputs}
+          specificInstructions="Descreva aqui com o que a sua empresa faz, com o que trabalha, seus valores..."
         />
       )}
       <S.ContinueButtonWrapper>
