@@ -4,7 +4,6 @@ import { Settings } from 'react-slick'
 
 import { ReactComponent as LeftArrow } from '../../assets/icons/arrow-left.svg'
 import { ReactComponent as RightArrow } from '../../assets/icons/arrow-right.svg'
-import LoginForm from '../LoginForm'
 import Onboarding from '../Onboarding'
 import OnboardingSlide from '../OnboardingSlide'
 import * as S from './LoginPage.style'

@@ -1,8 +1,5 @@
-import { userInfo } from 'os'
-
 import React from 'react'
 
-import { User } from '../TransRegistrationForm/TransRegistrationForm'
 import * as S from './BirthDate.style'
 
 type BirthDateProps = {

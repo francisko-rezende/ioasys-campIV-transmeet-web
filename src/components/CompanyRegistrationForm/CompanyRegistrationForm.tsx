@@ -4,7 +4,6 @@ import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
 import CompanyRegistrationConfirmation from '../CompanyRegistrationConfirmation'
 import CompanyRegistrationFirstPage from '../CompanyRegistrationFirstPage'
-import RegistrationConfirmation from '../TransRegistrationConfirmation'
 import * as S from './CompanyRegistrationForm.style'
 
 export type CompanyRegistrationFormProps = {

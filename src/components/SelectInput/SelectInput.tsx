@@ -26,13 +26,10 @@ const SelectInput = ({
         name={name}
         id={name}
         selectWidth={selectWidth}
-        defaultValue="Selecionar"
         value={value}
         onChange={onChange}
       >
-        <option disabled selected>
-          Selecionar
-        </option>
+        <option disabled>Selecionar</option>
         {!!options &&
           options.map((option) => (
             <option value={option} key={option}>
