@@ -1,11 +1,12 @@
 import React, { Dispatch, SetStateAction } from 'react'
 
+import { Pages } from '../RegistrationForm/RegistrationForm'
 import * as S from './FormPagenavigationBar.style'
 
 export type FormPageNavigationBarProps = {
-  currentPage: number
-  setCurrentPage: Dispatch<SetStateAction<number>>
-  activeOnPage: number
+  currentPage: Pages
+  setCurrentPage: Dispatch<SetStateAction<Pages>>
+  activeOnPage: Pages
 }
 
 const FormPagenavigationBar = ({
@@ -15,11 +16,11 @@ const FormPagenavigationBar = ({
 }: FormPageNavigationBarProps) => {
   const isActive = currentPage === activeOnPage
   const handlePageChange = (
-    activeOnPage: number,
+    activeOnPage: Pages,
     // currentPage: number,
-    setCurrentPage: (arg: number) => void,
+    setCurrentPage: Dispatch<SetStateAction<Pages>>,
   ) => {
-    activeOnPage === 1 ? setCurrentPage(1) : setCurrentPage(2)
+    activeOnPage === '1' ? setCurrentPage('1') : setCurrentPage('2')
   }
 
   return (

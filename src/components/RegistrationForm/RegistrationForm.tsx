@@ -6,9 +6,11 @@ import FormPagenavigationBar from '../FormPagenavigationBar'
 import TransRegistrationForm from '../TransRegistrationForm'
 import * as S from './RegistrationForm.style'
 
+export type Pages = '1' | '2'
+
 const RegistrationForm = () => {
   const [activeForm, setActiveForm] = React.useState('Trans')
-  const [currentPage, setCurrentPage] = React.useState(1)
+  const [currentPage, setCurrentPage] = React.useState<Pages>('1')
 
   type FormTypes = {
     Trans: React.ReactNode
@@ -45,7 +47,7 @@ const RegistrationForm = () => {
     <S.Container>
       <S.Title>Crie sua conta</S.Title>
 
-      {currentPage === 1 && (
+      {currentPage === '1' && (
         <>
           <S.Paragraph>
             Selecione quem está se registrando e preencha os dados básicos
@@ -77,12 +79,12 @@ const RegistrationForm = () => {
       <S.FormNavigationBarWrapper>
         <FormPagenavigationBar
           currentPage={currentPage}
-          activeOnPage={1}
+          activeOnPage={'1'}
           setCurrentPage={setCurrentPage}
         />
         <FormPagenavigationBar
           currentPage={currentPage}
-          activeOnPage={2}
+          activeOnPage={'2'}
           setCurrentPage={setCurrentPage}
         />
       </S.FormNavigationBarWrapper>

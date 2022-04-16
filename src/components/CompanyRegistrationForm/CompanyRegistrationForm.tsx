@@ -4,11 +4,12 @@ import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
 import CompanyRegistrationConfirmation from '../CompanyRegistrationConfirmation'
 import CompanyRegistrationFirstPage from '../CompanyRegistrationFirstPage'
+import { Pages } from '../RegistrationForm/RegistrationForm'
 import * as S from './CompanyRegistrationForm.style'
 
 export type CompanyRegistrationFormProps = {
-  currentPage: number
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+  currentPage: Pages
+  setCurrentPage: React.Dispatch<React.SetStateAction<Pages>>
 }
 
 export type CompanyInputs = {
@@ -50,7 +51,7 @@ const CompanyRegistrationForm = ({
 
   return (
     <S.Wrapper>
-      {currentPage === 1 ? (
+      {currentPage === '1' ? (
         <CompanyRegistrationFirstPage inputs={inputs} setInputs={setInputs} />
       ) : (
         <CompanyRegistrationConfirmation
@@ -62,12 +63,12 @@ const CompanyRegistrationForm = ({
         />
       )}
       <S.ContinueButtonWrapper>
-        {currentPage === 1 ? (
+        {currentPage === '1' ? (
           <Button
             color="secondary"
             icon={<Chevron />}
             length="long"
-            onClick={() => setCurrentPage(2)}
+            onClick={() => setCurrentPage('2')}
           >
             Continuar
           </Button>

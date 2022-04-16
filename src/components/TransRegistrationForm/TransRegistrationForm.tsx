@@ -2,13 +2,14 @@ import React from 'react'
 
 import { ReactComponent as Chevron } from '../../assets/icons/Vector.svg'
 import Button from '../Button'
+import { Pages } from '../RegistrationForm/RegistrationForm'
 import TransRegistrationConfirmation from '../TransRegistrationConfirmation'
 import TransRegistrationFirstPage from '../TransRegistrationFirstPage'
 import * as S from './TransRegistrationForm.style'
 
 export type TransRegistrationFormProps = {
-  currentPage: number
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+  currentPage: Pages
+  setCurrentPage: React.Dispatch<React.SetStateAction<Pages>>
 }
 
 export type TransInputs = {
@@ -56,7 +57,7 @@ const TransRegistrationForm = ({
 
   return (
     <S.Wrapper>
-      {currentPage === 1 ? (
+      {currentPage === '1' ? (
         <TransRegistrationFirstPage inputs={inputs} setInputs={setInputs} />
       ) : (
         <TransRegistrationConfirmation
@@ -68,12 +69,12 @@ const TransRegistrationForm = ({
         />
       )}
       <S.ContinueButtonWrapper>
-        {currentPage === 1 ? (
+        {currentPage === '1' ? (
           <Button
             color="secondary"
             icon={<Chevron />}
             length="long"
-            onClick={() => setCurrentPage(2)}
+            onClick={() => setCurrentPage('2')}
           >
             Continuar
           </Button>
