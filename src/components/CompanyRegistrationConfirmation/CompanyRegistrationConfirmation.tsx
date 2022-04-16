@@ -136,7 +136,6 @@ const CompanyRegistrationConfirmation = ({
         <InputWithIcon
           label="Repita a senha"
           name="confirm password"
-          inputs={inputs}
           type="password"
           value={inputs.confirmPassword}
           onChange={checkIfPasswordsMatch}

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { Inputs } from '../TransRegistrationForm/TransRegistrationForm'
 import * as S from './InputWithIcon.style'
 
 export type InputWithIconProps = {
@@ -11,7 +10,6 @@ export type InputWithIconProps = {
   name?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   required?: boolean | undefined
-  inputs?: Inputs
   error?: string
   setError?: React.Dispatch<React.SetStateAction<string>>
 }
@@ -23,7 +21,6 @@ const InputWithIcon = ({
   value,
   onChange,
   name,
-  inputs,
   error,
   setError,
   ...props

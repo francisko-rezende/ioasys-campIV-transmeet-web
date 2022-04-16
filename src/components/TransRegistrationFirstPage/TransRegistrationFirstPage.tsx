@@ -24,6 +24,7 @@ const TransRegistrationFirstPage = ({
   const cityProps = useFormValidation(false)
   const cpfProps = useFormValidation('cpf')
   const otherProps = useFormValidation(false)
+  const addressProps = useFormValidation(false)
 
   return (
     <S.Form>
@@ -87,13 +88,24 @@ const TransRegistrationFirstPage = ({
           }}
         />
       </S.LocationLineWrapper>
-      <BirthDate
-        value={inputs.birthDate}
-        onChange={(e) => {
-          setInputs({ ...inputs, birthDate: e.target.value })
-        }}
+      <Input
+        label="Endereço completo"
+        inputType="text"
+        name="address"
+        {...addressProps}
+        placeholder="Avenida, Rua, Bairro, Número..."
+        value={inputs.address}
+        onChange={(e) => setInputs({ ...inputs, address: e.target.value })}
       />
-      <Input label="CPF" inputType="tel" name="cpf" {...cpfProps} />
+      <S.BirthdayWrapper>
+        <BirthDate
+          value={inputs.birthDate}
+          onChange={(e) => {
+            setInputs({ ...inputs, birthDate: e.target.value })
+          }}
+        />
+        <Input label="CPF" inputType="tel" name="cpf" {...cpfProps} />
+      </S.BirthdayWrapper>
       <S.GenderLineWrapper>
         <SelectInput
           name="Gênero"

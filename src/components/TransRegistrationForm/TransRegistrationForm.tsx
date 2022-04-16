@@ -18,6 +18,7 @@ export type TransInputs = {
   phoneNumber: string
   city: string
   state: string
+  address: string
   birthDate: string
   cpf: string
   genderSelect: string
@@ -42,6 +43,7 @@ const TransRegistrationForm = ({
     phoneNumber: '',
     city: '',
     state: 'Selecionar',
+    address: '',
     birthDate: '',
     cpf: '',
     genderSelect: 'Selecionar',

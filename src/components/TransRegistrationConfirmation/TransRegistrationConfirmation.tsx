@@ -67,6 +67,7 @@ const generatePayload = (inputs: TransInputs): Payload => {
     email,
     password,
     birthDate,
+    address,
     genderSelect: gender,
     description,
     city,
@@ -82,7 +83,7 @@ const generatePayload = (inputs: TransInputs): Payload => {
     password,
     regNumber,
     birthDate,
-    address: 'Rua dos bobos, número 0',
+    address,
     gender,
     description,
     telephone: `${areaCode}${phoneNumber}`,
@@ -138,7 +139,6 @@ const TransRegistrationConfirmation = ({
         <InputWithIcon
           label="Repita a senha"
           name="confirm password"
-          inputs={inputs}
           type="password"
           value={inputs.confirmPassword}
           onChange={checkIfPasswordsMatch}

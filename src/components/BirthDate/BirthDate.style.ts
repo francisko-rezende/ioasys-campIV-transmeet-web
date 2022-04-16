@@ -11,9 +11,9 @@ export const Wrapper = styled.div`
 export const Label = styled.label`
   z-index: 2;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  /* left: 11px; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  left: 11px;
   /* margin: 0 auto; */
   top: -4px;
   padding: 0 5px;
