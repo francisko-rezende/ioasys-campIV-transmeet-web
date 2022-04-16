@@ -22,14 +22,14 @@ Default.args = {
 
 export const PáginaAtiva = Template.bind({})
 PáginaAtiva.args = {
-  currentPage: 1,
-  activeOnPage: 1,
+  currentPage: '1',
+  activeOnPage: '1',
   setCurrentPage: () => console.log('clicou'),
 }
 
 export const PáginaInativa = Template.bind({})
 PáginaInativa.args = {
-  currentPage: 0,
-  activeOnPage: 1,
+  currentPage: '2',
+  activeOnPage: '1',
   setCurrentPage: () => console.log('clicou'),
 }
