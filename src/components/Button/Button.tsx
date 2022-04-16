@@ -14,6 +14,7 @@ export type ButtonProps = {
       target: HTMLButtonElement
     },
   ) => void
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
 
 const Button = ({
