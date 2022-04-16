@@ -4,6 +4,7 @@ import styled, {
   FlattenSimpleInterpolation,
 } from 'styled-components'
 
+// import havaianas from '../../assets/havaianas-logo.jpg'
 import { cardProps } from './Card'
 
 type VariantCallback = (theme: DefaultTheme) => FlattenSimpleInterpolation
@@ -42,6 +43,10 @@ export const Wrapper = styled.div<cardProps>`
   width: 310px;
   height: 109px;
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 
   &::before {
     display: block;
@@ -50,8 +55,7 @@ export const Wrapper = styled.div<cardProps>`
     height: 77px;
     background-color: red;
     border-radius: 10px;
-    position: relative;
-    top: 16px;
+    position: absolute;
     left: 18px;
   }
 
@@ -59,4 +63,43 @@ export const Wrapper = styled.div<cardProps>`
     ${!!matchStatus &&
     cardVariants[matchStatus as keyof CardVariantsProps](theme)}
   `}
+`
+
+export const Name = styled.h3`
+  margin-bottom: 3px;
+  ${({ theme }) => css`
+    color: ${theme.colors.typographyColors.white};
+  `}
+`
+
+export const DetailsText = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  ${({ theme }) => css`
+    color: ${theme.colors.secondaryColor.secondaryLighter};
+  `}
+`
+
+export const NameWrapper = styled.div`
+  margin-left: 42px;
+`
+
+export const AvatarWrapper = styled.div`
+  width: 66px;
+  height: 66px;
+  border: 5px solid ${({ theme }) => theme.colors.typographyColors.white};
+  border-radius: 50%;
+  margin-right: 20px;
+
+  ${({ theme }) => css`
+    background: ${theme.colors.typographyColors.white};
+  `}
+`
+
+export const Img = styled.img`
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  border-radius: 50%;
 `
