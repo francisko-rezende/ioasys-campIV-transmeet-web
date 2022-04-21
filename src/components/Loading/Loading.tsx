@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Spinner from '../../assets/icons/Loader.png'
+import Spinner from '../../assets/icons/loader-01.webp'
 import * as S from './Loading.style'
 
 export type LoadingProps = {
